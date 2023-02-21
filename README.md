@@ -16,9 +16,9 @@ int main( void )
         free(arr);
     );
     defer
-    (
+    ({
         printf( "world\n" );
-    );
+    });
     printf( "Hello " );
 
     return 0;
