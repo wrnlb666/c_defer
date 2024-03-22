@@ -1,8 +1,12 @@
 # gcc-defer
-go like defer in c, but only works with gcc
+go like defer in c, but only works with gcc or clang
+
+# Caution
+gcc support is done via gcc nested function, when compiling, you might need to add `-z execstack` to have a executable stack. 
+clang support is done via clang blocks, when compiling, you need to add `-fblocks` and for some platform, `-lBlocksRuntime`. 
 
 
-example:
+# example:
 ```c
 #include <stdio.h>
 #include <stdlib.h>
