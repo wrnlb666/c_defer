@@ -14,17 +14,12 @@ clang support is done via clang blocks, when compiling, you need to add `-fblock
 
 int main( void )
 {
-    int* arr = malloc( sizeof (int) * 10 );
-    defer
-    (
-        free(arr);
-    );
-    defer
-    ({
-        printf( "world\n" );
+    int* arr = malloc(sizeof (int) * 10);
+    defer(free(arr));
+    defer({
+        printf("world\n");
     });
-    printf( "Hello " );
-
+    printf("Hello ");
     return 0;
 }
 ```
